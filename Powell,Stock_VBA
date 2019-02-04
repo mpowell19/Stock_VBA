@@ -1,4 +1,3 @@
-Attribute VB_Name = "Module1"
 Sub Stock()
     Dim Sheet As Worksheet
     For Each Sheet In Worksheets
