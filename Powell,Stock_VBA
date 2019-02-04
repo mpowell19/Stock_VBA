@@ -1,0 +1,40 @@
+Attribute VB_Name = "Module1"
+Sub Stock()
+    Dim Sheet As Worksheet
+    For Each Sheet In Worksheets
+        Sheet.Activate
+        
+    
+            Dim Ticker As String
+            Dim Ticker_Volume As Double
+            Dim i As Long
+                i = 2
+            Dim j As Long
+                j = 2
+                
+            Ticker_Volume = Cells(i, 7).Value
+            
+            While Cells(i, 1).Value <> ("")
+                Ticker = Cells(i, 1).Value
+            
+                    If Cells(i + 1, 1).Value <> Cells(i, 1).Value Then
+                        Cells(j, 9).Value = Ticker
+                        Cells(j, 10).Value = Ticker_Volume
+            
+                        j = j + 1
+                        
+                        Ticker_Volume = Cells(i + 1, 7).Value
+                        
+                        Else: Ticker_Volume = Ticker_Volume + Cells(i + 1, 7).Value
+                    
+                    End If
+                    
+                i = i + 1
+             
+             Wend
+             
+            
+         
+         Next
+    
+End Sub
